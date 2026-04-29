@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="page-index">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lettiq — Find the words. Beat the clock.</title>
+  <meta name="description" content="Lettiq is a mobile word-puzzle game. Find hidden words across a tile board, challenge friends over local Wi-Fi, and customise your experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+  <!-- Ambient blobs -->
+  <div class="blob blob-indigo" aria-hidden="true"></div>
+  <div class="blob blob-mint" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header>
+    <a href="index.html" class="nav-logo" aria-label="Lettiq home">
+      <img src="./assets/appIconRectangle.png" alt="Lettiq" class="sq" />
+    </a>
+    <div class="nav-right">
+      <div id="lang-switcher" role="group" aria-label="Language selector"></div>
+      <a href="privacy.html" class="nav-link" data-i18n="navPrivacy">Privacy Policy</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <img class="hero-icon" src="./assets/appIconRounded.png" alt="Lettiq app icon" />
+      <h1 class="wordmark">Lettiq</h1>
+      <p class="tagline" data-i18n="tagline">Find the words. Beat the clock.</p>
+      <!--
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary" data-i18n="btnAppStore">App Store</a>
+        <a href="#" class="btn btn-secondary" data-i18n="btnGooglePlay">Google Play</a>
+      </div>
+      -->
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" aria-label="About">
+      <p class="section-label" data-i18n="aboutLabel">About the Game</p>
+      <h2 class="section-title" data-i18n="aboutTitle">Where Speed Meets Intelligence</h2>
+      <div class="about-body">
+        <p data-i18n="aboutBody1"></p>
+        <p data-i18n="aboutBody2"></p>
+        <p class="about-cta" data-i18n="aboutBody3"></p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" aria-label="Features">
+      <p class="section-label" data-i18n="featuresLabel">Features</p>
+      <h2 class="section-title" data-i18n="featuresTitle">Why Lettiq?</h2>
+      <div class="features-grid" id="features-grid"></div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section class="coming-soon" aria-label="Coming Soon">
+      <p class="section-label" data-i18n="comingSoonLabel">Coming Soon</p>
+      <h2 class="section-title" data-i18n="comingSoonTitle">More Features on the Way</h2>
+      <div class="coming-soon-grid" id="coming-soon-grid"></div>
+    </section>
+
+    <!-- MENTAL TRAINING -->
+    <section class="mental-training" aria-label="Mental Training">
+      <p class="section-label" data-i18n="mentalLabel">Brain Training</p>
+      <h2 class="section-title" data-i18n="mentalTitle">A Mental Sprint in Every Round</h2>
+      <p class="mental-intro" data-i18n="mentalIntro"></p>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="demo" aria-label="Try It">
+      <p class="section-label" data-i18n="demoLabel">Try It</p>
+      <h2 class="section-title" data-i18n="demoTitle">Find the Word</h2>
+      <div class="demo-intro">
+        <p class="demo-hint-text">
+          <span data-i18n="demoHint">Find:</span>
+          <span class="demo-target" id="demo-target"></span>
+        </p>
+        <p class="demo-min-note" data-i18n="demoMinWordNote"></p>
+      </div>
+      <div class="demo-grid" id="demo-grid" role="grid" aria-label="Letter grid"></div>
+      <div class="demo-footer">
+        <p class="demo-success" id="demo-success" aria-live="polite" data-i18n="demoSuccessMsg"></p>
+        <button class="btn btn-secondary demo-reset" id="demo-reset" data-i18n="demoPlayAgain"></button>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CTA -->
+    <section class="download-cta" aria-label="Download">
+      <p class="section-label" data-i18n="downloadLabel">Download</p>
+      <h2 class="section-title" data-i18n="downloadTitle">Start Playing Today</h2>
+      <div class="cta-buttons">
+        <!-- <a href="#" class="btn btn-primary" data-i18n="btnAppStore">App Store</a> -->
+        <a href="https://play.google.com/store/apps/details?id=com.lettiq.studio.lettiq" class="btn btn-secondary" data-i18n="btnGooglePlay"></a>
+      </div>
+      <p class="platform-note" data-i18n="platformNote">Available on Android</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-note" data-i18n="footerCopyright">© 2026 Lettiq Studio</span>
+    <a href="privacy.html" class="footer-note" data-i18n="footerPrivacy">Privacy Policy</a>
+  </footer>
+
+  <!-- i18n -->
+  <script src="i18n/index.en.js"></script>
+  <script src="i18n/index.pl.js"></script>
+  <script src="i18n/engine.js"></script>
+  <script>
+    // ── Feature icon SVGs (language-independent) ──────────────────
+    const FEATURE_ICONS = {
+      'word-discovery': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="2"/>
+        <rect x="14" y="3" width="7" height="7" rx="2"/>
+        <rect x="3" y="14" width="7" height="7" rx="2"/>
+        <rect x="14" y="14" width="7" height="7" rx="2"/>
+      </svg>`,
+      'brain-training': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 5C5 3 2 4 2 8C2 11 4 13 6 14C5 16 5 19 8 20C10 21 11 20 12 19C13 20 14 21 16 20C19 19 19 16 18 14C20 13 22 11 22 8C22 4 19 3 17 5C16 3 14 2 12 4C10 2 8 3 7 5Z"/>
+        <rect x="8.5" y="8.5" width="7" height="7" rx="1"/>
+        <line x1="10.5" y1="8.5" x2="10.5" y2="6.5"/>
+        <line x1="13.5" y1="8.5" x2="13.5" y2="6.5"/>
+        <line x1="10.5" y1="15.5" x2="10.5" y2="17.5"/>
+        <line x1="13.5" y1="15.5" x2="13.5" y2="17.5"/>
+        <line x1="8.5" y1="10.5" x2="6.5" y2="10.5"/>
+        <line x1="8.5" y1="13.5" x2="6.5" y2="13.5"/>
+        <line x1="15.5" y1="10.5" x2="17.5" y2="10.5"/>
+        <line x1="15.5" y1="13.5" x2="17.5" y2="13.5"/>
+      </svg>`,
+      'lan-multiplayer': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+        <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+        <circle cx="12" cy="20" r="1" fill="#2FFFC2"/>
+      </svg>`,
+      'themes': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+      </svg>`,
+    };
+
+    // ── Skill icon SVGs (language-independent) ────────────────────
+    const SKILL_ICONS = {
+      'quick-thinking': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>`,
+      'pattern-recognition': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <line x1="8" y1="11" x2="14" y2="11"/>
+        <line x1="11" y1="8" x2="11" y2="14"/>
+      </svg>`,
+      'memory-recall': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>`,
+      'vocabulary': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        <line x1="9" y1="7" x2="15" y2="7"/>
+        <line x1="9" y1="11" x2="15" y2="11"/>
+      </svg>`,
+    };
+
+    // ── Page render function ──────────────────────────────────────
+    function renderIndex(lang) {
+      const t = window.TRANSLATIONS[lang];
+      if (!t) return;
+
+      document.documentElement.lang = t.meta.htmlLang;
+      document.title = t.meta.pageTitle;
+
+      I18n.applyDataI18n(t);
+
+      // Render feature cards
+      const grid = document.getElementById('features-grid');
+      if (grid) {
+        grid.innerHTML = t.features.map(f => `
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">${FEATURE_ICONS[f.id] || ''}</div>
+            <p class="feature-title">${f.title}</p>
+            <p class="feature-desc">${f.desc}</p>
+          </div>
+        `).join('');
+      }
+
+      // Render coming soon cards
+      const comingSoonGrid = document.getElementById('coming-soon-grid');
+      if (comingSoonGrid && t.comingSoonItems) {
+        comingSoonGrid.innerHTML = t.comingSoonItems.map(item => `
+          <div class="coming-soon-card">
+            <div class="coming-soon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <p class="coming-soon-title">${item.title}</p>
+            <p class="coming-soon-desc">${item.desc}</p>
+          </div>
+        `).join('');
+      }
+
+      // Init demo
+      initDemo(t.demo);
+
+      // Render mental skill items
+      const skillsGrid = document.getElementById('skills-grid');
+      if (skillsGrid && t.mentalSkills) {
+        skillsGrid.innerHTML = t.mentalSkills.map(s => `
+          <div class="skill-item">
+            <div class="skill-icon" aria-hidden="true">${SKILL_ICONS[s.id] || ''}</div>
+            <p class="skill-title">${s.title}</p>
+            <p class="skill-desc">${s.desc}</p>
+          </div>
+        `).join('');
+      }
+    }
+
+    // ── Demo game ─────────────────────────────────────────────────
+    let _demoCleanup = null;
+
+    function initDemo(data) {
+      if (_demoCleanup) { _demoCleanup(); _demoCleanup = null; }
+
+      const gridEl    = document.getElementById('demo-grid');
+      const targetEl  = document.getElementById('demo-target');
+      const successEl = document.getElementById('demo-success');
+      const resetBtn  = document.getElementById('demo-reset');
+      if (!gridEl || !data) return;
+
+      targetEl.textContent = data.target;
+
+      const validWords = data.validWords || new Set([data.target]);
+
+      let selected   = [];
+      let isDragging = false;
+      let isBusy     = false;
+      let won        = false;
+
+      // ── Render tiles ──
+      gridEl.innerHTML = data.grid.map((letter, i) =>
+        `<div class="demo-tile" data-idx="${i}" role="gridcell" aria-label="${letter}">${letter}</div>`
+      ).join('');
+      const tiles = Array.from(gridEl.querySelectorAll('.demo-tile'));
+
+      function idx(el) { return parseInt(el.dataset.idx, 10); }
+
+      function isAdjacent(a, b) {
+        const ar = Math.floor(a / 4), ac = a % 4;
+        const br = Math.floor(b / 4), bc = b % 4;
+        return a !== b && Math.abs(ar - br) <= 1 && Math.abs(ac - bc) <= 1;
+      }
+
+      function updateVisuals() {
+        tiles.forEach((t, i) => t.classList.toggle('selected', !won && selected.includes(i)));
+      }
+
+      function shakeTiles() {
+        isBusy = true;
+        selected.forEach(i => {
+          tiles[i].classList.add('shake');
+          tiles[i].addEventListener('animationend', () => tiles[i].classList.remove('shake'), { once: true });
+        });
+        setTimeout(() => { selected = []; isBusy = false; updateVisuals(); }, 380);
+      }
+
+      // Returns 'target' | 'valid' | false
+      function validate() {
+        if (selected.length < 3) return false;
+        const word = selected.map(i => data.grid[i]).join('');
+        for (let i = 1; i < selected.length; i++) {
+          if (!isAdjacent(selected[i - 1], selected[i])) return false;
+        }
+        if (!validWords.has(word)) return false;
+        return word === data.target ? 'target' : 'valid';
+      }
+
+      function onWin() {
+        won = true;
+        const t = window.TRANSLATIONS[I18n.getLang()];
+        successEl.textContent = t ? t.ui.demoSuccessMsg : 'Found it!';
+        tiles.forEach((t, i) => {
+          t.classList.remove('selected');
+          if (selected.includes(i)) t.classList.add('won');
+        });
+        successEl.classList.add('visible');
+        resetBtn.classList.add('visible');
+      }
+
+      function onBonusWord() {
+        isBusy = true;
+        const t = window.TRANSLATIONS[I18n.getLang()];
+        successEl.textContent = t ? t.ui.demoWordFound : 'Nice word!';
+        successEl.classList.add('visible');
+        const snap = selected.slice();
+        snap.forEach(i => tiles[i].classList.add('bonus'));
+        tiles.forEach(t => t.classList.remove('selected'));
+        setTimeout(() => {
+          snap.forEach(i => tiles[i].classList.remove('bonus'));
+          successEl.classList.remove('visible');
+          selected = []; isBusy = false;
+          updateVisuals();
+        }, 1300);
+      }
+
+      function reset() {
+        won = false; selected = []; isDragging = false; isBusy = false;
+        tiles.forEach(t => t.classList.remove('selected', 'won', 'bonus', 'shake'));
+        const tl = window.TRANSLATIONS[I18n.getLang()];
+        successEl.textContent = tl ? tl.ui.demoSuccessMsg : 'Found it!';
+        successEl.classList.remove('visible');
+        resetBtn.classList.remove('visible');
+      }
+
+      function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        if (won || isBusy || selected.length === 0) return;
+        const result = validate();
+        if (result === 'target') onWin();
+        else if (result === 'valid') onBonusWord();
+        else shakeTiles();
+      }
+
+      function tryAddTile(el) {
+        if (!el || won || isBusy) return;
+        const tile = el.closest('.demo-tile');
+        if (!tile) return;
+        const i = idx(tile);
+        if (selected.includes(i)) return;
+        if (selected.length > 0 && !isAdjacent(selected[selected.length - 1], i)) return;
+        selected.push(i);
+        updateVisuals();
+      }
+
+      // Mouse
+      gridEl.addEventListener('mousedown', e => {
+        const tile = e.target.closest('.demo-tile');
+        if (!tile || won || isBusy) return;
+        e.preventDefault();
+        isDragging = true;
+        selected = [idx(tile)];
+        updateVisuals();
+      });
+      gridEl.addEventListener('mouseover', e => {
+        if (!isDragging) return;
+        tryAddTile(e.target);
+      });
+      document.addEventListener('mouseup', endDrag);
+
+      // Touch
+      gridEl.addEventListener('touchstart', e => {
+        const tile = e.target.closest('.demo-tile');
+        if (!tile || won || isBusy) return;
+        e.preventDefault();
+        isDragging = true;
+        selected = [idx(tile)];
+        updateVisuals();
+      }, { passive: false });
+      gridEl.addEventListener('touchmove', e => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        tryAddTile(document.elementFromPoint(touch.clientX, touch.clientY));
+      }, { passive: false });
+      gridEl.addEventListener('touchend', endDrag, { passive: false });
+
+      resetBtn.addEventListener('click', reset);
+
+      _demoCleanup = () => document.removeEventListener('mouseup', endDrag);
+
+      reset();
+    }
+
+    I18n.initI18n(renderIndex);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="page-privacy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Lettiq</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+  <!-- Ambient blobs -->
+  <div class="blob blob-indigo" aria-hidden="true"></div>
+  <div class="blob blob-mint" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo" aria-label="Lettiq home">
+        <img src="./assets/appIconRounded.png" alt="Lettiq" />
+      </a>
+      <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+    </div>
+    <div id="lang-switcher" role="group" aria-label="Language selector"></div>
+  </header>
+
+  <!-- HERO BAND -->
+  <div class="hero-band">
+    <div>
+      <p class="hero-band-label" data-i18n="heroLabel"></p>
+      <h1 data-i18n="heroTitle"></h1>
+    </div>
+    <p class="hero-band-date" data-i18n="heroDate"></p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-wrap" id="main-content"></main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-note" data-i18n="footerLeft"></span>
+    <a href="index.html" class="footer-note">← Home</a>
+  </footer>
+
+  <!-- i18n -->
+  <script src="i18n/privacy.en.js"></script>
+  <script src="i18n/privacy.pl.js"></script>
+  <script src="i18n/engine.js"></script>
+  <script>
+    // ── Page render function ──────────────────────────────────────
+    function renderPrivacy(lang) {
+      const t = window.TRANSLATIONS[lang];
+      if (!t) return;
+
+      document.documentElement.lang = t.meta.htmlLang;
+      document.title = t.meta.pageTitle;
+
+      I18n.applyDataI18n(t);
+
+      // Build TOC + sections
+      const main = document.getElementById('main-content');
+      const tocItems = t.sections.map(s =>
+        `<li><a href="#${lang}-${s.id}">${s.title}</a></li>`
+      ).join('');
+
+      const sectionsHTML = t.sections.map((s, i) => `
+        <section class="policy-section" id="${lang}-${s.id}" style="animation-delay:${i * 0.04}s">
+          <p class="section-number">${String(i + 1).padStart(2, '0')}</p>
+          <h2>${s.title}</h2>
+          ${s.content}
+        </section>
+      `).join('');
+
+      main.innerHTML = `
+        <nav class="toc" aria-label="${t.ui.tocTitle}">
+          <p class="toc-title">${t.ui.tocTitle}</p>
+          <ol>${tocItems}</ol>
+        </nav>
+        ${sectionsHTML}
+      `;
+    }
+
+    I18n.initI18n(renderPrivacy);
+  </script>
+
+</body>
+</html>

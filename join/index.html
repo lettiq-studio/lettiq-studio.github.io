@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Join Lettiq Room</title>
+    <script>
+      var code = new URLSearchParams(window.location.search).get('code');
+      if (code) window.location = 'lettiq://join?code=' + code;
+    </script>
+    <style>
+      body { font-family: sans-serif; text-align: center; padding: 3rem 1rem; }
+      a.btn { display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem;
+              background: #4a90e2; color: #fff; border-radius: 8px;
+              text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <h2>Opening Lettiq…</h2>
+    <p>If nothing happened, get the app first:</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE">Google Play</a>
+    <a class="btn" href="https://apps.apple.com/app/idYOUR_APP_ID">App Store</a>
+  </body>
+  </html>
