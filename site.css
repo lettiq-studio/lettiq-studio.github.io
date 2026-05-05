@@ -242,6 +242,14 @@ a.footer-note:hover { color: var(--mint); }
   letter-spacing: 0.04em;
 }
 
+.hero-subtitle {
+  font-family: var(--font-meta);
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  color: rgba(47, 255, 194, 0.6);
+  letter-spacing: 0.02em;
+  margin-top: -0.5rem;
+}
+
 .cta-buttons {
   display: flex;
   gap: 1rem;
@@ -348,6 +356,88 @@ a.footer-note:hover { color: var(--mint); }
 }
 
 .feature-desc {
+  font-family: var(--font-meta);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Benefits ────────────────────────────────────────────────────── */
+.benefits {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.benefit-pill {
+  text-align: center;
+}
+
+.benefit-title {
+  font-family: var(--font-brand);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 0.5rem;
+}
+
+.benefit-desc {
+  font-family: var(--font-meta);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── Game Modes ─────────────────────────────────────────────────── */
+.game-modes {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.mode-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(47, 255, 194, 0.18);
+  border-left: 4px solid var(--indigo);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s var(--spring), box-shadow 0.35s ease, border-left-color 0.35s ease;
+}
+.mode-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  border-left-color: var(--mint);
+}
+
+.mode-title {
+  font-family: var(--font-brand);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+
+.mode-desc {
   font-family: var(--font-meta);
   font-size: 0.82rem;
   color: var(--text-muted);
