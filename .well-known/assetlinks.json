@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.lettiq.studio.lettiq",
+      "sha256_cert_fingerprints": [
+        "55:7A:6E:C8:3F:0F:AC:98:94:FA:28:57:4A:32:33:41:BF:0D:4E:7C:DE:00:CF:5A:6C:3B:1B:10:7E:E0:32:16"
+      ]
+    }
+  }
+]
