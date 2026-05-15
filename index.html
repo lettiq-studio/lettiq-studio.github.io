@@ -187,6 +187,24 @@
   <script src="i18n/index.pl.js"></script>
   <script src="i18n/engine.js"></script>
   <script>
+    // ── Game mode icons (language-independent) ───────────────────
+    const GAME_MODE_ICONS = {
+      basic:      'assets/game-modes/basic_noBg.png',
+      endless:    'assets/game-modes/endless_noBg.png',
+      timeRun:    'assets/game-modes/timeRun_noBg.png',
+      hotWords:   'assets/game-modes/hotWords_noBg2.png',
+      beatAi:     'assets/game-modes/beatAi_noBg.png',
+      lingua:     'assets/game-modes/lingua_noBg.png',
+      suddenEnd:  'assets/game-modes/suddenEnd_noBg.png',
+      blitz:      'assets/game-modes/blitz_noBg.png',
+      mutation:   'assets/game-modes/mutation_noBg.png',
+      filter:     'assets/game-modes/filter_noBg.png',
+      survival:   'assets/game-modes/survival_noBg.png',
+      multiplier: 'assets/game-modes/multiplier_noBg.png',
+      surge:      'assets/game-modes/surge_noBg.png',
+      echo:       'assets/game-modes/echo_noBg.png',
+    };
+
     // ── Feature icon SVGs (language-independent) ──────────────────
     const FEATURE_ICONS = {
       'word-discovery': `<svg viewBox="0 0 24 24" fill="none" stroke="#2FFFC2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -286,12 +304,18 @@
       // Render game mode cards
       const modesGrid = document.getElementById('modes-grid');
       if (modesGrid && t.gameModes) {
-        modesGrid.innerHTML = t.gameModes.map(m => `
+        modesGrid.innerHTML = t.gameModes.map(m => {
+          const iconSrc = GAME_MODE_ICONS[m.id];
+          const iconHtml = iconSrc
+            ? `<img class="mode-icon" src="${iconSrc}" alt="" aria-hidden="true" />`
+            : '';
+          return `
           <div class="mode-card">
+            ${iconHtml}
             <p class="mode-title">${m.title}</p>
             <p class="mode-desc">${m.desc}</p>
-          </div>
-        `).join('');
+          </div>`;
+        }).join('');
       }
 
       // Render coming soon cards

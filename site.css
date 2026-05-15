@@ -427,6 +427,14 @@ a.footer-note:hover { color: var(--mint); }
   border-left-color: var(--mint);
 }
 
+.mode-icon {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+}
+
 .mode-title {
   font-family: var(--font-brand);
   font-size: 0.92rem;
