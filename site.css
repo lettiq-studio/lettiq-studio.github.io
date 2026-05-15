@@ -10,8 +10,8 @@
   --surface-raised: #232840;
   --mint:           #2FFFC2;
   --indigo:         #2D3AFF;
-  --text:           #F4F6F8;
-  --text-muted:     rgba(200, 200, 200, 0.8);
+  --text:           #ffffff;
+  --text-muted:     rgba(255, 255, 255, 0.8);
   --rule:           rgba(244, 246, 248, 0.08);
   --font-brand:     'Roboto', sans-serif;
   --font-meta:      'Courier New', monospace;
