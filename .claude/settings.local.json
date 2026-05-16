@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(png|jpg\\)$\")",
+      "Bash(Copy-Item \"D:/Projects/lettiq/Src/Assets/_Project/Sprites/GameModes/revert_noBg.png\" \"D:/Projects/lettiq-studio.github.io/assets/game-modes/revert_noBg.png\")",
+      "Bash(Copy-Item \"D:/Projects/lettiq/Src/Assets/_Project/Sprites/GameModes/penalty_noBg.png\" \"D:/Projects/lettiq-studio.github.io/assets/game-modes/penalty_noBg.png\")",
+      "Bash(Copy-Item \"D:/Projects/lettiq/Src/Assets/_Project/Sprites/GameModes/walking_letter_noBg.png\" \"D:/Projects/lettiq-studio.github.io/assets/game-modes/walking_letter_noBg.png\")",
+      "Bash(Write-Output \"Done\")",
+      "Bash(cp \"D:/Projects/lettiq/Src/Assets/_Project/Sprites/GameModes/revert_noBg.png\" \"D:/Projects/lettiq-studio.github.io/assets/game-modes/revert_noBg.png\")",
+      "Bash(cp \"D:/Projects/lettiq/Src/Assets/_Project/Sprites/GameModes/penalty_noBg.png\" \"D:/Projects/lettiq-studio.github.io/assets/game-modes/penalty_noBg.png\")",
+      "Bash(cp \"D:/Projects/lettiq/Src/Assets/_Project/Sprites/GameModes/walking_letter_noBg.png\" \"D:/Projects/lettiq-studio.github.io/assets/game-modes/walking_letter_noBg.png\")"
+    ]
+  }
+}
