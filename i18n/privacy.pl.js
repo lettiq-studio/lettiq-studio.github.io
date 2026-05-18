@@ -9,7 +9,7 @@ window.TRANSLATIONS.pl = {
     navHome:   'Strona główna',
     heroLabel: 'Informacje prawne',
     heroTitle: 'Polityka\nPrywatności',
-    heroDate:  'Ostatnia aktualizacja · Marzec 2026',
+    heroDate:  'Ostatnia aktualizacja · Maj 2026',
     tocTitle:  'Spis treści',
     footerLeft: '© 2026 Lettiq Studio',
   },
@@ -28,8 +28,7 @@ window.TRANSLATIONS.pl = {
       content: `
         <p>Zbieramy wyłącznie dane niezbędne do działania gry:</p>
         <ul>
-          <!-- <li><strong>Nazwa wyświetlana</strong> — imię lub pseudonim, który podajesz podczas konfiguracji profilu, używany do identyfikacji w trybie wieloosobowym.</li> -->
-          <li><strong>Identyfikator reklamowy</strong> — identyfikator reklamowy Twojego urządzenia (IDFA na iOS, GAID na Androidzie), używany przez Google AdMob do wyświetlania reklam.</li>
+          <!-- <li><strong>Nazwa wyświetlana</strong> — imię lub pseudonim, który podajesz podczas konfiguracji profilu, używany do identyfikacji w trybie wieloosobowym.</li> -->          <li><strong>Identyfikator urządzenia</strong> — unikalny identyfikator Twojego urządzenia, używany do śledzenia Twojej pozycji w rankingu dziennym za pośrednictwem PlayFab.</li>          <li><strong>Identyfikator reklamowy</strong> — identyfikator reklamowy Twojego urządzenia (IDFA na iOS, GAID na Androidzie), używany przez Google AdMob do wyświetlania reklam.</li>
           <li><strong>Status zakupu w aplikacji</strong> — informacja o tym, czy zakupiłeś/-aś opcję „Usuń reklamy". Płatność jest w całości obsługiwana przez Google Play lub App Store; nie mamy dostępu do Twoich danych płatniczych.</li>
           <li><strong>Dane Google Play Games</strong> — jeśli zalogujesz się przez Google Play Games, Google przekazuje aplikacji Twoją nazwę wyświetlaną, postęp osiągnięć i wyniki na liście najlepszych. Dane te podlegają własnej polityce prywatności Google.</li>
         </ul>
@@ -55,6 +54,7 @@ window.TRANSLATIONS.pl = {
         <p>Zebrane dane są wykorzystywane w celu:</p>
         <ul>
           <!-- <li>Uruchamiania gry i jej funkcji wieloosobowych.</li> -->
+          <li>Śledzenia Twojej pozycji w rankingu dziennym za pośrednictwem PlayFab.</li>
           <li>Wyświetlania list wyników i osiągnięć za pośrednictwem Google Play Games.</li>
           <li>Wyświetlania reklam przez Google AdMob.</li>
           <li>Obsługi zakupów w aplikacji przez Google Play lub App Store.</li>
@@ -81,6 +81,7 @@ window.TRANSLATIONS.pl = {
       content: `
         <p>Nie sprzedajemy ani nie wynajmujemy Twoich danych osobowych. Dane są udostępniane wyłącznie następującym usługom zewnętrznym, z których każda działa zgodnie z własną polityką prywatności:</p>
         <ul>
+          <li><strong>PlayFab</strong> (Microsoft) — identyfikator urządzenia i dane rankingu dla rankingu dziennego. <a href="https://playfab.com/privacy/" target="_blank" rel="noopener">Polityka prywatności</a></li>
           <li><strong>Google</strong> (Google Play Games) — dane osiągnięć i list wyników. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności</a></li>
           <li><strong>Google</strong> (sieć reklamowa AdMob) — identyfikator reklamowy do wyświetlania reklam. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Polityka prywatności</a></li>
         </ul>
@@ -90,7 +91,7 @@ window.TRANSLATIONS.pl = {
       id: 'przechowywanie',
       title: 'Przechowywanie danych',
       content: `
-        <p>Twoja nazwa wyświetlana i status zakupu w aplikacji są przechowywane lokalnie na urządzeniu i pozostają do momentu odinstalowania aplikacji lub zresetowania urządzenia. <!-- Dane trybu LAN (nazwa wyświetlana, lokalny adres IP, metadane pokoju) są przechowywane wyłącznie przez czas trwania sesji gry i nigdy nie są zapisywane trwale. --></p>
+        <p>Identyfikator Twojego urządzenia, nazwa wyświetlana i status zakupu w aplikacji są przechowywane lokalnie na urządzeniu i pozostają do momentu odinstalowania aplikacji lub zresetowania urządzenia. Twoja pozycja w rankingu dziennym jest przechowywana w PlayFab i jest automatycznie resetowana każdego dnia; dane historyczne rankingu nie są przechowywane.</p>
         <p>Dane przechowywane przez Google Play Games lub Google AdMob podlegają ich własnym politykom przechowywania.</p>
       `
     },

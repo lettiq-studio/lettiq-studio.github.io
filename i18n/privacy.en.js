@@ -9,7 +9,7 @@ window.TRANSLATIONS.en = {
     navHome:   'Home',
     heroLabel: 'Legal',
     heroTitle: 'Privacy\nPolicy',
-    heroDate:  'Last updated · March 2026',
+    heroDate:  'Last updated · May 2026',
     tocTitle:  'Contents',
     footerLeft: '© 2026 Lettiq Studio',
   },
@@ -29,6 +29,7 @@ window.TRANSLATIONS.en = {
         <p>We collect only what is necessary to run the game:</p>
         <ul>
           <!-- <li><strong>Display name</strong> — the name you enter when setting up your profile, used to identify you in multiplayer games.</li> -->
+          <li><strong>Device ID</strong> — a unique identifier for your device, used to track your ranking position in daily leaderboards via PlayFab.</li>
           <li><strong>Advertising identifier</strong> — your device's advertising ID (IDFA on iOS, GAID on Android), used by Google AdMob to serve ads.</li>
           <li><strong>In-app purchase status</strong> — whether you have purchased the "Remove Ads" option. Payment is processed entirely by Google Play or the App Store; we never see your payment details.</li>
           <li><strong>Google Play Games data</strong> — if you sign in with Google Play Games, Google shares your display name, achievement progress, and leaderboard scores with the app. This is governed by Google's own privacy policy.</li>
@@ -55,6 +56,7 @@ window.TRANSLATIONS.en = {
         <p>The data we collect is used to:</p>
         <ul>
           <!-- <li>Run the game and its multiplayer features.</li> -->
+          <li>Track your ranking position in the daily leaderboard via PlayFab.</li>
           <li>Display leaderboards and achievements via Google Play Games.</li>
           <li>Show ads through Google AdMob.</li>
           <li>Process in-app purchases through Google Play or the App Store.</li>
@@ -81,6 +83,7 @@ window.TRANSLATIONS.en = {
       content: `
         <p>We do not sell or rent your personal information. Data is shared only with the following third-party services, each operating under their own privacy policy:</p>
         <ul>
+          <li><strong>PlayFab</strong> (Microsoft) — device ID and ranking data for daily leaderboards. <a href="https://playfab.com/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
           <li><strong>Google</strong> (Google Play Games) — achievement and leaderboard data. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
           <li><strong>Google</strong> (AdMob ad network) — advertising identifier for ad serving. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
         </ul>
@@ -90,7 +93,7 @@ window.TRANSLATIONS.en = {
       id: 'retention',
       title: 'Data Retention',
       content: `
-        <p>Your display name and in-app purchase status are stored on-device and remain until you uninstall the app or reset your device. <!-- LAN multiplayer data (display name, local IP, room metadata) is held only for the duration of the game session and is never persisted. --></p>
+        <p>Your device ID, display name, and in-app purchase status are stored on-device and remain until you uninstall the app or reset your device. Your ranking position in the daily leaderboard is stored via PlayFab and is automatically reset each day; historical ranking data is not retained.</p>
         <p>Data held by Google Play Games or Google AdMob is subject to their respective retention policies.</p>
       `
     },
